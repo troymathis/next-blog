@@ -9,6 +9,7 @@ const name = "Troy Mathis"
 export const siteTitle = 'Next.js Sample Website';
 
 export default function Layout({ children, home }) {
+    // meta tags used to describe a page's content
     return (
       <div className={styles.container}>
         <Head>
@@ -27,6 +28,7 @@ export default function Layout({ children, home }) {
           <meta name="twitter:card" content="summary_large_image" />
         </Head>
         <header className={styles.header}>
+            {/* boolean home prop adjusts size of title and image */}
           {home ? (
             <>
               <Image
@@ -43,6 +45,7 @@ export default function Layout({ children, home }) {
             <>
               <Link href="/">
                 <Image
+                // image preloaded due to priority attribute
                   priority
                   src="/images/profile.jpg"
                   className={utilStyles.borderCircle}
